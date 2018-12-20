@@ -1,0 +1,8 @@
+<ul class="image-list">
+  <% items.forEach((item) => { %> 
+    <li class="image-list-item">
+      <h3 class="list-title"><%= item.type %></h3> 
+      <img class="list-image" src=<%= item.img_url %> >
+    </li>
+  <% }); %>   
+</ul>
