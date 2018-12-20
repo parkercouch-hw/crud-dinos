@@ -4,6 +4,7 @@ const fs = require('fs');
 const dinoData = JSON.parse(fs.readFileSync('./dinosaurs.json'));
 
 
+// Show list of Dinos
 router.get('/', (req, res) => {
   const nameFilter = req.query.nameFilter;
   let filteredData = dinoData;
@@ -15,27 +16,34 @@ router.get('/', (req, res) => {
   res.render('dinosaurs/index', {items: filteredData});
 });
 
+
+// Add new dino form
 router.get('/new', (req, res) => {
   res.render('dinosaurs/new');
 });
 
-router.post('/:idx', (req, res) => {
-  const id = req.params.idx - 1;
-  const data = (({ type, name }) => ({ type, name }))(req.body);
-  if(req.body._method === 'PUT') {
-    dinoData.splice(id, 1);
-    dinoData.push(data);
-    console.log('edited');
-  } else if (req.body._method === 'DELETE') {
-    dinoData.splice(id, 1);
-    console.log('deleted');
-  }
+
+// Delete dino
+router.delete('/:idx', (req, res) => {
+  // const id = req.params.idx - 1;
+  dinoData.splice(req.params.idx, 1);
   fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinoData));
   res.redirect('/dinosaurs');
 });
 
+// Edit dino data
+router.put('/:idx', (req, res) => {
+  // const id = req.params.idx - 1;
+  dinoData.splice(req.params.idx, 1);
+  dinoData.push(req.body);
+  fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinoData));
+  res.redirect('/dinosaurs');
+})
+
+// Show one dino
 router.get('/:idx', (req, res) => {
-  const dino = dinoData[req.params.idx - 1];
+  // const dino = dinoData[req.params.idx - 1];
+  const dino = dinoData[req.params.idx];
   if(dino) {
     res.render('dinosaurs/show', {item: dino});
   } else {
@@ -43,8 +51,10 @@ router.get('/:idx', (req, res) => {
   }
 });
 
+// Show edit form
 router.get('/edit/:idx', (req, res) => {
-  const dino = dinoData[req.params.idx - 1];
+  // const dino = dinoData[req.params.idx - 1];
+  const dino = dinoData[req.params.idx];
   if(dino) {
     res.render('dinosaurs/edit', {item: dino, idx: req.params.idx});
   } else {
@@ -52,7 +62,7 @@ router.get('/edit/:idx', (req, res) => {
   }
 });
 
-
+// Add new dino
 router.post('/', (req, res) => {
   dinoData.push(req.body);
   fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinoData));

@@ -1,9 +1,13 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
-
+const methodOverride = require('method-override');
 const ejsLayouts = require('express-ejs-layouts');
+
+app.use(methodOverride('_method'));
+
 app.set('view engine', 'ejs');
+
 
 app.use(express.urlencoded({extended: false}));
 

@@ -1,16 +1,14 @@
-<form class="edit-form" method="POST" action="/dinosaurs/<%= idx %>">
+<form class="edit-form" method="POST" action="/dinosaurs/<%= idx %>?_method=PUT">
   <label for="itemType">Type (<%= item.type %>)</label>
   <input type="text" name="type" id="itemType" value="<%= item.type %>" >
   <br>
   <label for="itemName">Name (<%= item.name %>)</label>
   <input type="text" name="name" id="itemName" value="<%= item.name %>" >
 
-  <input type='hidden', name='_method', value='PUT'>
   <br>
   <input type="submit" value="Edit">
 </form>
 
-<form class="delete-form" action="/dinosaurs/<%= idx %>" method="POST">
-  <input type='hidden', name='_method', value='DELETE'>
+<form class="delete-form" action="/dinosaurs/<%= idx %>?_method=DELETE" method="POST">
   <input class="delete-button" type="submit" value="DELETE">
 </form>

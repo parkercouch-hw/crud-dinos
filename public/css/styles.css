@@ -92,6 +92,14 @@ footer {
   text-align: center;
 }
 
+.add-form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .delete-form {
   margin: 50px 0;
   display: flex;
@@ -114,6 +122,10 @@ footer {
   width: 100%;
 }
 
+.medium-input {
+  width: 75%;
+}
+
 .name-list {
   display: flex;
   flex-flow: column nowrap;
@@ -131,4 +143,66 @@ footer {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+}
+
+.edit-button {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  width: 40px;
+  font-size: 10px;
+  border-radius: 5px;
+  /* height: 20px; */
+  background-color: lightgrey;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.img-edit-button {
+  display: inline-block;
+  /* position: absolute; */
+  right: 0;
+  width: 40px;
+  font-size: 10px;
+  border-radius: 5px;
+  /* height: 20px; */
+  background-color: lightgrey;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.img-edit-button:hover {
+  background-color: whitesmoke;
+  color: grey;
+}
+
+.edit-button:hover {
+  background-color: whitesmoke;
+  color: grey;
+}
+
+.name-list-item {
+  width: 100%;
+  position: relative;
+}
+
+.add-button {
+display: block;
+margin: 20px auto;
+width: 100px;
+font-size: 16px;
+border-radius: 5px;
+background-color: lightgrey;
+color: black;
+text-decoration: none;
+text-align: center;
+}
+
+.add-button:hover {
+  background-color: whitesmoke;
+  color: grey;
 }

@@ -1,8 +1,9 @@
 <ul class="image-list">
-  <% items.forEach((item) => { %> 
+  <% items.forEach((item, id) => { %> 
     <li class="image-list-item">
       <h3 class="list-title"><%= item.type %></h3> 
       <img class="list-image" src=<%= item.img_url %> >
+      <a class="img-edit-button" href="/prehistoric_creatures/edit/<%= id %> ">Edit</a>
     </li>
   <% }); %>   
 </ul>
