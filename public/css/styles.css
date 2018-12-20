@@ -3,12 +3,18 @@ body {
   background-color: grey;
 }
 
+footer {
+  text-align: center;
+  color: white;
+}
+
 .container {
   max-width: 750px;
   margin: 10px auto;
   background-color: white;
   padding: 20px;
   border-radius: 5px;
+  min-height: 500px;
 }
 
 .main-nav {
@@ -44,6 +50,7 @@ body {
   display: block;
   font-size: 36px;
   margin: 0;
+  text-align: center;
 }
 
 .image-list-item {
@@ -68,4 +75,60 @@ body {
 
 .type-emphasis {
   font-style: italic;
+}
+
+.filter-form {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.delete-form {
+  margin: 50px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-button {
+  background-color: black;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: red;
+  color: black;
+}
+
+.long-input {
+  width: 100%;
+}
+
+.name-list {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+.centered {
+  text-align: center;
+}
+
+.show-block {
+  min-height: 400px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
 }

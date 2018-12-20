@@ -15,7 +15,7 @@ app.use('/prehistoric_creatures', require('./controllers/prehistoric_creatures')
 
 // UPDATE THIS
 app.get('/', (req, res) => {
-  res.send('Hello.');
+  res.render('home.ejs');
 });
 
 app.listen(PORT);

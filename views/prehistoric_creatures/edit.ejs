@@ -1,16 +1,16 @@
-<form method="POST" action="/prehistoric_creatures/<%= idx %>">
+<form class="edit-form" method="POST" action="/prehistoric_creatures/<%= idx %>">
   <label for="itemType">Type (<%= item.type %>)</label>
   <input type="text" name="type" id="itemType" value="<%= item.type %>" >
-
-  <label for="itemUrl">Image URL (<%= item.img_url %>)</label>
-  <input type="text" name="img_url" id="itemUrl" value="<%= item.img_url %>" >
+  <br>
+  <label for="itemUrl">Image URL <br> (<%= item.img_url %>)</label>
+  <input class="long-input" type="text" name="img_url" id="itemUrl" value="<%= item.img_url %>" >
 
   <input type='hidden', name='_method', value='PUT'>
-
+  <br>
   <input type="submit" value="Edit">
 </form>
 
-<form action="/prehistoric_creatures/<%= idx %>" method="POST">
+<form class="delete-form" action="/prehistoric_creatures/<%= idx %>" method="POST">
   <input type='hidden', name='_method', value='DELETE'>
-  <input type="submit" value="DELETE">
+  <input class="delete-button" type="submit" value="DELETE">
 </form>
