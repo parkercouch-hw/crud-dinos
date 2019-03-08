@@ -2,4 +2,4 @@
 
 ### Assignment
 * CRUD operations for dinos and prehistoric creatures
-* Use node/express/ejs/postgres
+* Use node/express/ejs
